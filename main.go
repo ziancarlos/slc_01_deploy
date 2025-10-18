@@ -138,7 +138,7 @@ func main() {
 	if port == "" {
 		port = "3000"
 	}
-	addr := "localhost:" + port
+	addr := ":" + port // listens on all interfaces (0.0.0.0)
 	server := http.Server{
 		Addr:    addr,
 		Handler: router,
