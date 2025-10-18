@@ -134,8 +134,13 @@ func main() {
 		})
 	})
 
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+	addr := "localhost:" + port
 	server := http.Server{
-		Addr:    "localhost:3000",
+		Addr:    addr,
 		Handler: router,
 	}
 
